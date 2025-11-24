@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/<your-org>/<your-repo>
+    targetRevision: HEAD
+    path: charts/app
+    helm:
+      valueFiles:
+        - ../../environments/dev/app-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

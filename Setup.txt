@@ -1,0 +1,25 @@
+deployment-repo/
+├── charts/
+│   ├── cnpg/
+│   │   ├── Chart.yaml
+│   │   ├── values.yaml
+│   │   └── templates/
+│   │       ├── cluster.yaml
+│   │       └── _helpers.tpl
+│   ├── app/
+│   │   ├── Chart.yaml
+│   │   ├── values.yaml
+│   │   └── templates/
+│   │       ├── deployment.yaml
+│   │       ├── service.yaml
+│   │       └── _helpers.tpl
+├── argocd/
+│   ├── cnpg-app.yaml
+│   └── app-app.yaml
+└── environments/
+    ├── dev/
+    │   ├── cnpg-values.yaml
+    │   └── app-values.yaml
+    └── prod/
+        ├── cnpg-values.yaml
+        └── app-values.yaml

@@ -1,0 +1,14 @@
+clusterName: test-db
+imageName: ghcr.io/cloudnative-pg/postgresql:16
+instances: 1
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 300m
+    memory: 512Mi
+
+storage:
+  size: 1Gi

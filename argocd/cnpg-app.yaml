@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cnpg
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/<your-org>/<your-repo>
+    targetRevision: HEAD
+    path: charts/cnpg
+    helm:
+      valueFiles:
+        - ../../environments/dev/cnpg-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: database
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

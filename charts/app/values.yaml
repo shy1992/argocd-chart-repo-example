@@ -1,0 +1,20 @@
+image:
+  repository: busybox
+  tag: latest
+  pullPolicy: IfNotPresent
+
+command: ["sh", "-c"]
+args: ["sleep 3600"]
+
+replicaCount: 1
+
+service:
+  enabled: false
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi
