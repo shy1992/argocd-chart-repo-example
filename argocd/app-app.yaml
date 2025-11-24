@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<your-org>/<your-repo>
+    repoURL: https://github.com/shy1992/argocd-chart-repo-example
     targetRevision: HEAD
     path: charts/app
     helm:
